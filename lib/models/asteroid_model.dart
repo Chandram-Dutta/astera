@@ -7,7 +7,7 @@ class Asteroid {
   final String id;
   final String name;
   final String nasaJplUrl;
-  final int absoluteMagnitudeH;
+  final double absoluteMagnitudeH;
   final bool isPotentiallyHazardousAsteroid;
   final bool isSentryObject;
   final Links links;
@@ -70,7 +70,7 @@ class Meters {
 @JsonSerializable(fieldRename: FieldRename.snake)
 class CloseApproachData {
   final String closeApproachDate;
-  final String epochDateCloseApproach;
+  final int epochDateCloseApproach;
   final RelativeVelocity relativeVelocity;
   final MissDistance missDistance;
   final String orbitingBody;

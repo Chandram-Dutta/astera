@@ -10,7 +10,7 @@ Asteroid _$AsteroidFromJson(Map<String, dynamic> json) => Asteroid(
       json['id'] as String,
       json['name'] as String,
       json['nasa_jpl_url'] as String,
-      json['absolute_magnitude_h'] as int,
+      (json['absolute_magnitude_h'] as num).toDouble(),
       json['is_potentially_hazardous_asteroid'] as bool,
       json['is_sentry_object'] as bool,
       Links.fromJson(json['links'] as Map<String, dynamic>),
@@ -65,7 +65,7 @@ Map<String, dynamic> _$MetersToJson(Meters instance) => <String, dynamic>{
 CloseApproachData _$CloseApproachDataFromJson(Map<String, dynamic> json) =>
     CloseApproachData(
       json['close_approach_date'] as String,
-      json['epoch_date_close_approach'] as String,
+      json['epoch_date_close_approach'] as int,
       RelativeVelocity.fromJson(
           json['relative_velocity'] as Map<String, dynamic>),
       MissDistance.fromJson(json['miss_distance'] as Map<String, dynamic>),

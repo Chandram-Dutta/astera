@@ -29,19 +29,19 @@ class _SystemHash {
   }
 }
 
-String $getAsteroidListHash() => r'55482435ca1b2fbd9fe3522df1f3729320c834e2';
+String $getAsteroidListHash() => r'fbda9caf318a57fc75adf8604f1e921e9af74a30';
 
 /// See also [getAsteroidList].
 class GetAsteroidListProvider
     extends AutoDisposeFutureProvider<List<Asteroid>> {
   GetAsteroidListProvider(
-    this.startDate,
-    this.endDate,
+    this.start,
+    this.end,
   ) : super(
           (ref) => getAsteroidList(
             ref,
-            startDate,
-            endDate,
+            start,
+            end,
           ),
           from: getAsteroidListProvider,
           name: r'getAsteroidListProvider',
@@ -51,21 +51,21 @@ class GetAsteroidListProvider
                   : $getAsteroidListHash,
         );
 
-  final String startDate;
-  final String endDate;
+  final DateTime start;
+  final DateTime end;
 
   @override
   bool operator ==(Object other) {
     return other is GetAsteroidListProvider &&
-        other.startDate == startDate &&
-        other.endDate == endDate;
+        other.start == start &&
+        other.end == end;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, startDate.hashCode);
-    hash = _SystemHash.combine(hash, endDate.hashCode);
+    hash = _SystemHash.combine(hash, start.hashCode);
+    hash = _SystemHash.combine(hash, end.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -80,12 +80,12 @@ class GetAsteroidListFamily extends Family<AsyncValue<List<Asteroid>>> {
   GetAsteroidListFamily();
 
   GetAsteroidListProvider call(
-    String startDate,
-    String endDate,
+    DateTime start,
+    DateTime end,
   ) {
     return GetAsteroidListProvider(
-      startDate,
-      endDate,
+      start,
+      end,
     );
   }
 
@@ -94,8 +94,8 @@ class GetAsteroidListFamily extends Family<AsyncValue<List<Asteroid>>> {
     covariant GetAsteroidListProvider provider,
   ) {
     return call(
-      provider.startDate,
-      provider.endDate,
+      provider.start,
+      provider.end,
     );
   }
 
