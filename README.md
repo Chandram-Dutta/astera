@@ -1,8 +1,14 @@
-# astera
+# Astera
 
-A new Flutter project.
+Find Asteroids near you!
 
-## Getting Started
+Chandram Dutta © 2022
+
+> The App uses the Nasa Open NeoWs API to fetch the data of the Asteroids near Earth. The App is built using Flutter and Dart.
+
+---
+
+### Getting Started with Flutter
 
 This project is a starting point for a Flutter application.
 
