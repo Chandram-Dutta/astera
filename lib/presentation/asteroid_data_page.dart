@@ -1,5 +1,6 @@
 import 'package:astera/models/asteroid_model.dart';
 import 'package:astera/presentation/home_page.dart';
+import 'package:astera/services/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -50,10 +51,11 @@ class AsteroidDetailPage extends ConsumerWidget {
             child: GridView(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 18,
                 crossAxisSpacing: 18,
+                childAspectRatio: isDesktop(context, 900) ? 1.8 : 1,
               ),
               children: [
                 Container(
@@ -182,11 +184,11 @@ class AsteroidDetailPage extends ConsumerWidget {
                     ),
                     GridView(
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: 18,
                         crossAxisSpacing: 18,
+                        childAspectRatio: isDesktop(context, 900) ? 1.8 : 1,
                       ),
                       shrinkWrap: true,
                       children: [
@@ -277,11 +279,11 @@ class AsteroidDetailPage extends ConsumerWidget {
                       ),
                       GridView(
                         physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: 18,
                           crossAxisSpacing: 18,
+                          childAspectRatio: isDesktop(context, 900) ? 1.8 : 1,
                         ),
                         shrinkWrap: true,
                         children: [
