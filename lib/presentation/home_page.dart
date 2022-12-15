@@ -43,7 +43,7 @@ class HomePage extends ConsumerWidget {
             ),
           ),
           Positioned(
-            top: 20,
+            top: 40,
             child: Hero(
               tag: 'title',
               child: Text(
